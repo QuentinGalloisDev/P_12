@@ -1,17 +1,19 @@
 import React from 'react'
 import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { USER_AVERAGE_SESSIONS } from '../data'
+import SessionLength from '../Service/SessionLength';
 // importer durée des sessions et jour
-export default function Performance() {
+const Performance = (data) => {
     let userAverageSessionsMocked = USER_AVERAGE_SESSIONS[0].sessions
 
     let averageSessionsForChart = userAverageSessionsMocked.map((averageSession) => {
-        let obj = {}
-        obj["day"] = dayInLetter(averageSession.day)
-        obj["sessionLength"] = averageSession.sessionLength
+        return {
+            day: dayInLetter(averageSession.day),
+            sessionLength: averageSession.sessionLength
+        }
 
-        return obj
     })
+    // console.log(averageSessionsForChart)
     function dayInLetter(number) {
         switch (number) {
             case 1:
@@ -60,7 +62,7 @@ export default function Performance() {
                 <LineChart
                     width={300}
                     height={100}
-                    data={averageSessionsForChart}
+                    data={SessionLength()}
                     margin={{
                         top: 5,
                         right: 30,
@@ -78,3 +80,5 @@ export default function Performance() {
         </div>
     )
 }
+
+export default Performance

@@ -3,18 +3,17 @@ import PropTypes from 'prop-types';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { USER_ACTIVITY } from '../data'
 
-export default function DailyActivity(id) {
+const DailyActivity = (id) => {
 
     let userActivityMocked = USER_ACTIVITY[0].sessions
     // console.log(userActivityMocked)
     let sessionsTab = userActivityMocked.map((session) => {
-        let obj = {}
-        obj["day"] = new Date(session.day).getDay() + 1
-        obj["calories"] = session.calories
-        obj["kilogram"] = session.kilogram
-
-        return obj
-    })
+        return {
+            day: new Date(session.day).getDay() + 1,
+            calories: session.calories,
+            kilogram: session.kilogram,
+        };
+    });
     sessionsTab.sort((a, b) => { return a.day - b.day })
 
     // Personnalisation du tooltip
@@ -63,7 +62,7 @@ export default function DailyActivity(id) {
     )
 
 }
-
+export default DailyActivity
 
 
 DailyActivity.prototype = {

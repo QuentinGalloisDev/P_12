@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
     margin: 0px;
+    font-family: "Roboto", sans-serif;
 }
 
 .container {
@@ -36,13 +39,18 @@ nav a {
 
 .hello_user {
     font-size: 35px;
-    width: 100%;
+    width: 90%;
 
+}
+
+.hello_user .user_name {
+    color: #FF0000;
 }
 
 .body {
     width: 75%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     height: 70%;
 }
@@ -52,30 +60,30 @@ nav a {
     flex-wrap: wrap;
     width: 80%;
     height: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 .dailyActivityChart {
-    width: 83%;
-    height: 250px;
+    width: 90%;
+    height: 45%;
 }
 
 .sessionLength {
     width: 25%;
-    height: 250px;
+    height: 45%;
     margin-right: 15px;
 }
 
 .performance {
-    width: 30%;
-    height: 250px;
+    width: 38%;
+    height: 45%;
     margin-right: 15px;
 }
 
 .score {
     width: 25%;
-    height: 250px;
+    height: 45%;
 }
 
 .legend_text {

@@ -12,6 +12,8 @@ import Performance from './Components/Performance';
 import SessionLength from './Components/SessionLength'
 import Score from './Components/Score';
 import GalleryUserKeyData from './Components/GalleryUserKeyData';
+import App from './App';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,11 +27,14 @@ root.render(
           <div className='charts'>
             <DailyActivity></DailyActivity>
             <SessionLength></SessionLength>
+
             <Performance />
             <Score />
+            <App />
 
           </div>
           <GalleryUserKeyData />
+
         </div>
 
       </BrowserRouter>
